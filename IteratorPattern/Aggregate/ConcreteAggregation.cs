@@ -26,7 +26,12 @@ namespace IteratorPattern.Aggregate
         public object this[int index]
         {
             get { return _items[index]; }
-            set { _items.Add((T)value); }
+            set {
+                if (value is T t)
+                {
+                    _items.Add(t);
+                }
+            }
         }
     }
 }
