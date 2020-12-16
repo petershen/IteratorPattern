@@ -7,13 +7,13 @@ using System.Text;
 
 namespace IteratorPattern.Aggregate
 {
-    public class ConcreteAggregation : IAggregation
+    public class ConcreteAggregation<T> : IAggregation
     {
-        private ArrayList _items = new ArrayList();
+        private IList<T> _items = new List<T>();
 
         public IIterator CreateIterator()
         {
-            return new ConcreteIterator(this);
+            return new ConcreteIterator<T>(this);
         }
 
         // Gets item count
@@ -26,7 +26,7 @@ namespace IteratorPattern.Aggregate
         public object this[int index]
         {
             get { return _items[index]; }
-            set { _items.Add(value); }
+            set { _items.Add((T)value); }
         }
     }
 }

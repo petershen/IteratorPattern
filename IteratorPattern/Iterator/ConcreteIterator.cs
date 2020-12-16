@@ -6,13 +6,13 @@ using System.Text;
 
 namespace IteratorPattern.Iterator
 {
-    public class ConcreteIterator : IIterator
+    public class ConcreteIterator<T> : IIterator
     {
-        private readonly ConcreteAggregation _collection;
+        private readonly ConcreteAggregation<T> _collection;
         private int _current = 0;
         private int _step = 1;
 
-        public ConcreteIterator(ConcreteAggregation collection)
+        public ConcreteIterator(ConcreteAggregation<T> collection)
         {
             _collection = collection;
         }

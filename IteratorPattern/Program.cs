@@ -9,7 +9,7 @@ namespace IteratorPattern
         static void Main(string[] args)
         {
             // Create items
-            var items = new ConcreteAggregation();
+            var items = new ConcreteAggregation<TestItem>();
             items[0] = new TestItem("Test Item 0");
             items[1] = new TestItem("Test Item 1");
             items[2] = new TestItem("Test Item 2");
