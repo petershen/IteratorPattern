@@ -8,26 +8,25 @@ namespace IteratorPattern
     {
         static void Main(string[] args)
         {
-            // Build a collection
-
-            var collection = new ConcreteAggregation();
-            collection[0] = new TestItem("Test Item 0");
-            collection[1] = new TestItem("Test Item 1");
-            collection[2] = new TestItem("Test Item 2");
-            collection[3] = new TestItem("Test Item 3");
-            collection[4] = new TestItem("Test Item 4");
-            collection[5] = new TestItem("Test Item 5");
-            collection[6] = new TestItem("Test Item 6");
-            collection[7] = new TestItem("Test Item 7");
-            collection[8] = new TestItem("Test Item 8");
+            // Create items
+            var items = new ConcreteAggregation();
+            items[0] = new TestItem("Test Item 0");
+            items[1] = new TestItem("Test Item 1");
+            items[2] = new TestItem("Test Item 2");
+            items[3] = new TestItem("Test Item 3");
+            items[4] = new TestItem("Test Item 4");
+            items[5] = new TestItem("Test Item 5");
+            items[6] = new TestItem("Test Item 6");
+            items[7] = new TestItem("Test Item 7");
+            items[8] = new TestItem("Test Item 8");
 
             // Create iterator
-            var iterator = collection.CreateIterator();
+            var iterator = items.CreateIterator();
 
             // Skip every other item
             iterator.Step = 2;
 
-            Console.WriteLine("Iterating over collection:");
+            Console.WriteLine("Iterating over items:");
 
             for (IItem item = iterator.First();
                 !iterator.IsDone; item = iterator.Next())
